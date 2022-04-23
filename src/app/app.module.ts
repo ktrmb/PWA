@@ -13,6 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { OverviewListComponent } from './views/overview/overview-list/overview-list.component';
 import {MatListModule} from "@angular/material/list";
 import { OverviewComponent } from './views/overview/overview.component';
+import {MatTableModule} from "@angular/material/table";
+import {DatePipe} from "@angular/common";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -30,9 +34,12 @@ import { OverviewComponent } from './views/overview/overview.component';
     MatButtonModule,
     MatSidenavModule,
     AppRoutingModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatCheckboxModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

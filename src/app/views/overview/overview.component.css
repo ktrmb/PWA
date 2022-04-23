@@ -1,3 +1,34 @@
-.wrapper{
-  margin: 2%
+
+
+table{
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 100%;
+}
+
+#attendant {
+  color: #26CC57
+}
+
+.header {
+  margin: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#userPanel{
+
+  background: #8a8a8a;
+}
+
+user-container{
+  height: 100%;
+
+}
+
+.body{
+
+  display: flex;
+  width: 100%;
 }
