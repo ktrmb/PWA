@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
     let userPanel = document.getElementById('userPanel');
     if(this.expand) {
       // @ts-ignore
-      userPanel.style.width = "300px"
+      userPanel.style.width = "400px"
     } else {
       // @ts-ignore
       userPanel.style.width = "0px"
