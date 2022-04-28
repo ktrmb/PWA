@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="card" *ngFor="let user of userArray" [routerLink]="['/user', user.id]">
+    <mat-card>
+      <mat-card-title>{{user.firstName + " " + user.lastName}}</mat-card-title>
+      <mat-card-subtitle>{{user.id}}</mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>

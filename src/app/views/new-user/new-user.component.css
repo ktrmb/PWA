@@ -1,0 +1,13 @@
+.wrapper {
+  margin: 2%
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+mat-form-field {
+  margin-bottom: 2%;
+}
