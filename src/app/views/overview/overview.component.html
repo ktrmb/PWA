@@ -1,9 +1,10 @@
-  <div class="header">
+<div class="wrapper">
     <h2>Übersicht Anwesenheit </h2>
 
-  </div>
 
-  <div class="body">
+  <div><mat-spinner id="spinner"></mat-spinner></div>
+
+  <div class="body" *ngIf="spinning">
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Position Column -->
@@ -42,3 +43,4 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
+</div>

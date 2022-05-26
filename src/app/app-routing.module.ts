@@ -8,7 +8,8 @@ import {NewUserComponent} from "./views/new-user/new-user.component";
 const routes: Routes = [
   { path: 'overview', component: OverviewComponent },
   { path: 'user/:id', component: UserViewComponent },
-  { path: 'newUser', component: NewUserComponent }
+  { path: 'newUser', component: NewUserComponent },
+  {path: '', redirectTo: '/overview', pathMatch: 'full'},
 ];
 
 @NgModule({

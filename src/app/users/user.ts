@@ -1,6 +1,7 @@
 export interface User {
   id: string;
-  firstName: string;
+  rfid_uid: string;
+  firstName: string,
   lastName: string;
   checkIn: any;
   checkOut: any;

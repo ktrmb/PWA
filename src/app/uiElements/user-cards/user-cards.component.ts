@@ -13,7 +13,12 @@ export class UserCardsComponent implements OnInit {
   constructor(private users: UserService) { }
 
   ngOnInit(): void {
-    this.userArray = this.users.getUsers();
+    this.users.getUsers().subscribe(resp => {
+      if(resp) {
+        this.userArray =  resp;
+        console.log(this.userArray);
+      }
+    });
   }
 
 }

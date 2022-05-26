@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from "../../users/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {DatePipe} from "@angular/common";
+import {MatTable} from "@angular/material/table";
+import {User} from "../../users/user";
 
 @Component({
   selector: 'app-user-view',
@@ -14,23 +16,61 @@ export class UserViewComponent implements OnInit {
   dataSource: any = [];
   user: any;
   id: any;
+  timestamps: any;
+  spinning: boolean = false;
+
+  @ViewChild(MatTable) table: MatTable<User> | undefined;
+
 
   constructor(private users: UserService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    const sub = this.route.params.subscribe(params => this.id = +params['id'])
-    console.log(this.id);
-    console.log(sub);
-    this.user = this.users.getUser(this.id);
-    const timestamps = this.users.getAttendantTime(this.id);
-    timestamps.forEach(elem => {
-      this.dataSource.push({
-        date: elem.checkIn,
-        checkIn: elem.checkIn,
-        checkOut: elem.checkOut
-      });
+
+    const sub = this.route.params.subscribe(params => {
+      this.id = +params['id'],
+        this.users.getUser(this.id).subscribe(resp => {
+          if (resp) {
+            this.dataSource = [];
+            this.user = resp;
+            this.getAttendance();
+          }
+        });
     })
-    console.log(this.user);
+
   }
 
+
+  getAttendance(): void {
+    this.users.getAttendantList().subscribe(resp => {
+      if (resp) {
+        console.log(resp)
+        this.timestamps = resp.filter((entry: any) => entry.user_id == this.id);
+      }
+      this.timestamps.forEach((elem: any) => {
+        if (elem.clockinout == 1 ) {
+          this.dataSource.push({
+            date: elem.clockin,
+            checkIn: elem.clockin,
+            checkOut: null
+          });
+        } else {
+          this.dataSource.push({
+            date: elem.clockin,
+            checkIn: null,
+            checkOut: elem.clockin
+          });
+        }
+
+      });
+      hideSpinner();
+      this.spinning = true;
+      this.table?.renderRows();
+    });
+
+    function hideSpinner() {
+      // @ts-ignore
+      document.getElementById('spinner').style.display = 'none'
+
+    }
+  }
 }

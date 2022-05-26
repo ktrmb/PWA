@@ -22,6 +22,10 @@ import { UserViewComponent } from './views/user-view/user-view.component';
 import { NewUserComponent } from './views/new-user/new-user.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {HttpClientModule} from "@angular/common/http";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+
 
 
 @NgModule({
@@ -32,9 +36,11 @@ import {MatInputModule} from "@angular/material/input";
     UserCardsComponent,
     UserViewComponent,
     NewUserComponent
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     MatIconModule,
@@ -48,7 +54,9 @@ import {MatInputModule} from "@angular/material/input";
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

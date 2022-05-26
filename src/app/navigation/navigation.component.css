@@ -32,3 +32,13 @@ mat-drawer-container {
   margin: 2% 2% 4%;
 
 }
+
+mat-toolbar {
+  background: #9CD1FA;
+}
+
+
+#closeButton {
+  background-color: #635fad;
+  color: #ffffff;
+}
