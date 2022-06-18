@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {UserService} from "../../users/user.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {UserService} from "../../users/user.service";
   templateUrl: './user-cards.component.html',
   styleUrls: ['./user-cards.component.css']
 })
-export class UserCardsComponent implements OnInit {
+export class UserCardsComponent implements OnChanges, OnInit {
 
   userArray: any;
 
@@ -16,7 +16,14 @@ export class UserCardsComponent implements OnInit {
     this.users.getUsers().subscribe(resp => {
       if(resp) {
         this.userArray =  resp;
-        console.log(this.userArray);
+      }
+    });
+  }
+
+  ngOnChanges(): void {
+    this.users.getUsers().subscribe(resp => {
+      if(resp) {
+        this.userArray =  resp;
       }
     });
   }

@@ -36,26 +36,30 @@ export class OverviewComponent implements OnInit {
     this.users.getUsers().subscribe(resp => {
       resp.forEach((user: any) => {
         let name = user.name.split(" ");
+        let timestamps = null;
         try {
-          let timestamps = this.attendance.filter((entry: any ) => entry.user_id == user.id );
-
-
-        let elem = {
-          firstName: name[0],
-          lastName: name[1],
-          checkIn: null,
-          checkOut: null,
-          attendant: false
+          timestamps = this.attendance.filter((entry: any) => entry.user_id == user.id);
+        } catch (e) {
         }
+        try {
+          if(timestamps.length > 0) {
+            let elem = {
+              firstName: name[0],
+              lastName: name[1],
+              checkIn: null,
+              checkOut: null,
+              attendant: false
+            }
 
-        if(timestamps[timestamps.length -1].clockinout == 0) {
-          elem.checkOut = timestamps[timestamps.length - 1].clockin
-          elem.checkIn = timestamps[timestamps.length - 2].clockin;
-        } else {
-          elem.checkIn = timestamps[timestamps.length - 1].clockin;
-          elem.attendant = true;
-        }
-          this.dataSource.push(elem);
+            if(timestamps[timestamps.length -1].clockinout == 0) {
+              elem.checkOut = timestamps[timestamps.length - 1].clockin
+              elem.checkIn = timestamps[timestamps.length - 2].clockin;
+            } else {
+              elem.checkIn = timestamps[timestamps.length - 1].clockin;
+              elem.attendant = true;
+            }
+            this.dataSource.push(elem);
+          }
         } catch (e) {
           window.location.reload();
         }

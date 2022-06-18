@@ -43,8 +43,7 @@ export class UserViewComponent implements OnInit {
   getAttendance(): void {
     this.users.getAttendantList().subscribe(resp => {
       if (resp) {
-        console.log(resp)
-        this.timestamps = resp.filter((entry: any) => entry.user_id == this.id);
+        this.timestamps = resp.filter((entry: any) => entry.user_id == this.id).sort().reverse();
       }
       this.timestamps.forEach((elem: any) => {
         if (elem.clockinout == 1 ) {

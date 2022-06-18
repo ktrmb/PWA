@@ -32,10 +32,13 @@ export class NewUserComponent implements OnInit {
       attendant: false
     }
     this.users.addUser(user).subscribe(resp => {
-      this._snackBar.open("Neuer User wurde erstellt", "Close");
+      this._snackBar.open("Neuer User wurde erstellt", "Close", {
+        duration: 60000
+      });
       this.firstName.reset();
       this.lastName.reset();
       this.id.reset();
+
     });
 
   }
