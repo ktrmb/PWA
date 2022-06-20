@@ -50,7 +50,7 @@ export class UserViewComponent implements OnInit {
         this.timestamps = resp.filter((entry: any) => entry.user_id == this.id).sort().reverse();
       }
       this.timestamps.forEach((elem: any) => {
-        if (elem.clockinout == 1 ) {
+        if (elem.clockinout == 0 ) {
           this.dataSource.push({
             date: elem.clockin,
             checkIn: elem.clockin,

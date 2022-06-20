@@ -14,5 +14,10 @@ table {
 
 button{
   margin-left: 37%;
+  background-color: #635fad;
+}
 
+.mat-mini-fab {
+  background-color: #635fad;
+  color: #ffffff;
 }
