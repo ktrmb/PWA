@@ -51,7 +51,7 @@ export class OverviewComponent implements OnInit {
               attendant: false
             }
 
-            if(timestamps[timestamps.length -1].clockinout == 0) {
+            if(timestamps[timestamps.length -1].clockinout == 1) {
               elem.checkOut = timestamps[timestamps.length - 1].clockin
               elem.checkIn = timestamps[timestamps.length - 2].clockin;
             } else {
