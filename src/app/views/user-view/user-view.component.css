@@ -6,3 +6,13 @@ table {
 .wrapper {
   margin:  2%;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+button{
+  margin-left: 37%;
+
+}

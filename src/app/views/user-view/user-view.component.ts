@@ -4,6 +4,8 @@ import {ActivatedRoute} from "@angular/router";
 import {DatePipe} from "@angular/common";
 import {MatTable} from "@angular/material/table";
 import {User} from "../../users/user";
+import {MatDialog} from "@angular/material/dialog";
+import {DialogComponent} from "../../uiElements/dialog/dialog.component";
 
 @Component({
   selector: 'app-user-view',
@@ -22,7 +24,7 @@ export class UserViewComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<User> | undefined;
 
 
-  constructor(private users: UserService, private route: ActivatedRoute,) { }
+  constructor(private users: UserService, private route: ActivatedRoute,public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -38,7 +40,9 @@ export class UserViewComponent implements OnInit {
     })
 
   }
-
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent,{width: '250px', data: this.user});
+  }
 
   getAttendance(): void {
     this.users.getAttendantList().subscribe(resp => {
@@ -69,7 +73,8 @@ export class UserViewComponent implements OnInit {
     function hideSpinner() {
       // @ts-ignore
       document.getElementById('spinner').style.display = 'none'
-
     }
+
+
   }
 }

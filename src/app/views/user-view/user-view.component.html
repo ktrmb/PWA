@@ -1,7 +1,14 @@
 <div class="wrapper">
-  <h2>{{user.name}}</h2>
-  <h3>{{user.rfid_uid}}</h3>
-  <div><mat-spinner id="spinner"></mat-spinner></div>
+  <div class="header">
+    <div>
+      <h2>{{user.name}}</h2>
+      <h3>{{user.rfid_uid}}</h3>
+    </div>
+    <button mat-mini-fab (click)="openDialog()"><mat-icon>delete</mat-icon></button>
+  </div>
+  <div>
+    <mat-spinner id="spinner"></mat-spinner>
+  </div>
 
   <div class="body" *ngIf="spinning">
 

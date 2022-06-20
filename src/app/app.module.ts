@@ -25,6 +25,8 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { DialogComponent } from './uiElements/dialog/dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -35,29 +37,31 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     OverviewComponent,
     UserCardsComponent,
     UserViewComponent,
-    NewUserComponent
+    NewUserComponent,
+    DialogComponent
 
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSidenavModule,
-    AppRoutingModule,
-    MatListModule,
-    MatTableModule,
-    MatCheckboxModule,
-    FormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatSnackBarModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        MatToolbarModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule,
+        AppRoutingModule,
+        MatListModule,
+        MatTableModule,
+        MatCheckboxModule,
+        FormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatProgressSpinnerModule,
+        MatSnackBarModule,
+        MatDialogModule
+    ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
 })

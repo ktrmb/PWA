@@ -38,6 +38,10 @@ export class UserService {
     return this.http.get<any>(this.baseUrlAttendance);
   }
 
+  deleteUser(id: any): Observable<any> {
+    return this.http.delete<any>(this.baseUrlUsers + "/" + id);
+  }
+
 /*
 
 
