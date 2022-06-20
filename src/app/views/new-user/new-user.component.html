@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <h2>Neuen User anlegen</h2>
+  <mat-card>
+  <div class="inputs">
+    <mat-form-field >
+      <mat-label>Vornamen eingeben</mat-label>
+      <input matInput placeholder="Vorname" [formControl]="firstName">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Nachname eingeben</mat-label>
+      <input matInput placeholder="Nachname" [formControl]="lastName">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Chip ID eingeben</mat-label>
+      <input matInput placeholder="Chip ID" [formControl]="id">
+    </mat-form-field>
+
+  </div>
+  <div>
+    <button mat-raised-button (click)="addNew()">Hinzufügen</button>
+  </div>
+  </mat-card>
+</div>

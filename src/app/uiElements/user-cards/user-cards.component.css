@@ -1,0 +1,40 @@
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 45%;
+  padding: 1%;
+}
+
+.mat-card:hover {
+  transform: scale(1.05);
+  transition: box-shadow 0.2s ease,
+  transform 0.2s ease,
+  z-index 0s 0s ease;
+
+  box-shadow: 0 8px 50px rgba(0,0,0, 0.2);
+  border-color: #f8f8f8;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 8rem;
+  min-height: 5rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+mat-card-title {
+  font-size: 18px;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+}

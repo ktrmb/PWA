@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 96%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h2 {letter-spacing: 1px;}
+
+/*
+red: #EB635B
+light red: #EB7A73
+green: #26CC57
+blue: #41ADF0
+light blue: #A6EDFF
+
+ */
